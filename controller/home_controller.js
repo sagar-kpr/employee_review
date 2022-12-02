@@ -13,9 +13,11 @@ module.exports.session = async function(req,res){
         }
    }else{
         let user = await Employe.findOne({employe_id: req.body.employe_id}) 
-        if(user.employe_password == req.body.employe_password){
-            res.cookie('user', user.id)
-            return res.redirect('/Employe_home')
+        if(user){
+            if(user.employe_password == req.body.employe_password){
+                res.cookie('user', user.id)
+                return res.redirect('/Employe_home')
+            }
         }
         else{
             return res.redirect('back')

@@ -2,8 +2,6 @@ header{
     width: 100%;
     height:auto;
     background:linear-gradient(to Right,#614385 , #516395);
-    //background-color:rgba(66, 66, 69,0.9);
-    //opacity: 0.9;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,13 +9,16 @@ header{
     #logo{
         width: 150px;
         height: 80%;
-        color: white;
         text-align: center;
         //border: 1px solid white;
         p{
             font-size: 1.6rem;
             margin: 0;
             font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
+            a{
+                text-decoration: none;
+                color: white;
+            }
         }
         p::first-letter{
             font-size: 3rem;

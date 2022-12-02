@@ -1,3 +1,35 @@
-module.exports.login = function(req,res){
-    return res.render('login')
+const Admin = require('../models/Admin_schema');
+const Employe = require('../models/User_schema');
+
+module.exports.login = async function(req,res){
+    if(req.cookies.user){
+        let user = await Admin.findById(req.cookies.user)
+        if(user){
+            return res.redirect('/Admin_home')
+        }else{
+            user = await Employe.findById(req.cookies.user)
+            if(user){
+                return res.redirect('/Employe_home')
+            }    
+        }
+    }else{
+        return res.render('login')
+    }
+   
+}
+
+module.exports.register = async function(req,res){
+    if(req.cookies.user){
+        let user = await Admin.findById(req.cookies.user)
+        if(user){
+            return res.redirect('/Admin_home')
+        }else{
+            user = await Employe.findById(req.cookies.user)
+            if(user){
+                return res.redirect('/Employe_home')
+            }    
+        }
+    }else{
+        return res.render('Admin_Register')
+    }
 }

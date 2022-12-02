@@ -1,0 +1,184 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+main {
+  background-image: url("https://cdn.wallpapersafari.com/19/90/kGC79i.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+main aside {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 20px;
+  row-gap: 13px;
+}
+
+main aside #image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+main aside #image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+main aside #name {
+  width: 100%;
+  text-align: center;
+}
+
+main aside #name span {
+  font-size: 1.5rem;
+  color: white;
+  font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
+}
+
+main section {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main section #add-btn {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+}
+
+main section #add-btn p {
+  margin-top: 10px;
+}
+
+main section #add-btn p a {
+  background-color: #f96b24;
+  color: white;
+  font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
+}
+
+main section #add-btn .form-data {
+  width: 97%;
+}
+
+main section #add-btn .form-data #form-box {
+  width: 97%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main section #add-btn .form-data #form-box form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+main section #add-btn .form-data #form-box form #student-info {
+  width: 60%;
+}
+
+main section #add-btn .form-data #form-box form #student-info .common {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  justify-content: center;
+}
+
+main section #add-btn .form-data #form-box form #student-info .common label {
+  width: 400px;
+  font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
+}
+
+main section #add-btn .form-data #form-box form #student-info .common input, main section #add-btn .form-data #form-box form #student-info .common select {
+  width: 100%;
+}
+
+main section #add-btn .form-data #form-box form #student-info .common button {
+  width: auto;
+  height: 40px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  border: none;
+  margin-left: 25%;
+  margin-top: 10px;
+  font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
+}
+
+main section #employes-box {
+  width: 80%;
+  height: 90%;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+main section #employes-box .employe {
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+  color: black;
+  border-radius: 5px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
+}
+
+main section #employes-box .employe #employe-name {
+  width: auto;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+}
+
+main section #employes-box .employe #employe-name span {
+  font-size: 1.5rem;
+}
+
+main section #employes-box .employe #cross {
+  width: 50px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main section #employes-box .employe #cross a {
+  text-decoration: none;
+  color: black;
+}
+
+main section #employes-box .employe #cross a:hover {
+  color: red;
+}

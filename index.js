@@ -1,5 +1,9 @@
 const express = require('express');
 const port = 1000;
+const cookieParser = require('cookie-parser')
+const db = require('./config/mongoose');
+
+
 const app = express();
 const layouts = require('express-ejs-layouts');
 const parser = require('body-parser');
@@ -17,6 +21,9 @@ app.use(sass({
 
 app.use(parser.urlencoded({extended: false}));
 
+
+app.use(cookieParser());
+
 //used static files in assets 
 app.use(express.static('./assets'));
 
@@ -32,6 +39,9 @@ app.set('views', './views')
 //setup of express layouts after using in app
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true)
+
+
+
 
 
 //used routes

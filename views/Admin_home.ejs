@@ -1,0 +1,70 @@
+<link rel="stylesheet" type="text/css" href="css/admin_home.css">
+
+<main>
+    <aside>
+        <div id="image">
+            <img src="/images/blank.webp">
+        </div>
+        <div id="name">
+            <span><%= admin.admin_name %></span>
+        </div>
+    </aside>
+    <section>
+        <div id="add-btn" >
+            <p>
+                <a class="btn rounded-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Create Employe
+                </a>
+            </p>
+            <div class="collapse form-data" id="collapseExample">
+                <div class="card card-body  rounded-3" id="form-box">
+                    <form action="/admin_home/employedetails" id="list-form" method="post">
+    
+                        <div id="student-info">
+                            <div class="common">
+                                <label for="employe_name">Employe Name -</label>
+                                <input type="text" placeholder="Name" name="employe_name"  required>
+                            </div>
+                            
+                            <div class="common">
+                                <label for="employe_id">Employe Id -</label>
+                                <input type="number" placeholder="ID"  name="employe_id" required>
+                            </div>
+            
+                            <div class="common">
+                                <label for="employe_password">Employe Password -</label>
+                                <input type="password"  placeholder="New Password" name="employe_password"  required>
+                            </div>
+                            <div class="common">
+                                <button type="submit">Add Employe</button>
+                            </div>
+                        </div>
+                      
+                      
+                    </form>
+                </div>      
+            </div>
+            
+        </div>
+        <div id="employes-box">
+            <% let myemploye = admin.employes %>
+            <% for(list of employe ){ %>
+                <% for(emp of myemploye ){ %>
+                    <% if(list.id == emp){ %>
+                        <div class="employe">
+                            <div id="employe-name">
+                                <span><%= list.employe_name %></span>
+                            </div>
+                            <div id="cross">
+                                <a href="#">
+                                    <i class="fa-sharp fa-solid fa-xmark"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </div>
+    </section>
+</main>

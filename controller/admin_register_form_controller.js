@@ -2,6 +2,7 @@ const Admin = require('../models/Admin_schema');
 const Employe = require('../models/User_schema');
 
 module.exports.RegisterForm = async function(req,res){
+    console.log('adminreg controler')
     let user = await Employe.findOne({employe_id: req.body.admin_id})
     if(user){
         console.log('this id already taken by employe')

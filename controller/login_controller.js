@@ -2,6 +2,7 @@ const Admin = require('../models/Admin_schema');
 const Employe = require('../models/User_schema');
 
 module.exports.login = async function(req,res){
+    console.log('login controler')
     if(req.cookies.user){
         let user = await Admin.findById(req.cookies.user)
         if(user){
@@ -19,6 +20,7 @@ module.exports.login = async function(req,res){
 }
 
 module.exports.register = async function(req,res){
+    console.log('register controler')
     if(req.cookies.user){
         let user = await Admin.findById(req.cookies.user)
         if(user){

@@ -17,7 +17,12 @@ const User = new mongoose.Schema({
     admin:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'AdminSchema'
-    }
+    },
+    assign :[{
+        type: mongoose.Schema.Types.ObjectId
+
+
+    }]
 },{
     timestamps:true
 });

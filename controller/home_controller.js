@@ -89,3 +89,39 @@ module.exports.employe = async function(req,res){
         }
     }
 }    
+
+module.exports.profile = async function(req,res){
+    let user = await Employe.findById(req.params.id)
+    let admin = await Admin.findById(req.cookies.user);
+    let employe = await Employe.find({})
+    return res.render('profile', {
+        user:user,
+        admin: admin,
+        employe: employe
+    })
+}
+
+
+module.exports.remove = async function(req,res){
+    let admin = await Admin.findById(req.cookies.user);
+     
+    admin.employes= admin.employes.filter(check)
+    
+    function check(person){
+        if(String(person) != String(req.params.id)){
+            return person
+        }
+    }
+    await Employe.findByIdAndDelete(req.params.id)
+    admin.save();
+    return res.redirect('back')
+   
+
+}
+
+
+module.exports.assign = async function(req,res){
+    //let assignemploye = await Employe.findById(req.params.id);
+    
+    console.log(req.query.id)
+}

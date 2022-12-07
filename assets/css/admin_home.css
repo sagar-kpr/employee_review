@@ -1,14 +1,11 @@
-::-webkit-scrollbar {
-  width: 10px;
-}
-
 main {
   background-image: url("https://cdn.wallpapersafari.com/19/90/kGC79i.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
+  position: relative;
   justify-content: space-between;
 }
 
@@ -55,6 +52,10 @@ main section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+main section ::-webkit-scrollbar {
+  width: 10px;
 }
 
 main section #add-btn {
@@ -151,8 +152,14 @@ main section #employes-box .employe {
   font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
 }
 
-main section #employes-box .employe #employe-name {
-  width: auto;
+main section #employes-box .employe a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+
+main section #employes-box .employe a #employe-name {
+  width: 100%;
   height: 50px;
   text-align: center;
   display: flex;
@@ -161,7 +168,7 @@ main section #employes-box .employe #employe-name {
   margin-left: 10px;
 }
 
-main section #employes-box .employe #employe-name span {
+main section #employes-box .employe a #employe-name span {
   font-size: 1.5rem;
 }
 

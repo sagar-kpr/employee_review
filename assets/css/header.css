@@ -9,7 +9,7 @@ header {
 }
 
 header #logo {
-  width: 150px;
+  width: 105px;
   height: 80%;
   text-align: center;
 }
@@ -31,12 +31,13 @@ header #logo p::first-letter {
 }
 
 header #logout {
-  width: 150px;
+  width: auto;
   height: 80%;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 5px;
 }
 
 header #logout a {

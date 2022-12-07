@@ -51,17 +51,21 @@
             <% for(list of employe ){ %>
                 <% for(emp of myemploye ){ %>
                     <% if(list.id == emp){ %>
-                        <div class="employe">
-                            <div id="employe-name">
-                                <span><%= list.employe_name %></span>
-                            </div>
-                            <div id="cross">
-                                <a href="#">
-                                    <i class="fa-sharp fa-solid fa-xmark"></i>
-                                </a>
-                                
-                            </div>
-                        </div>
+                       
+                            <div class="employe" id="<%= list.id %>">
+                                <a href="/Admin_home/profile/<%= list.id %>" >
+                                    <div id="employe-name">
+                                        <span><%= list.employe_name %></span>
+                                    </div> 
+                                </a>    
+                                <div id="cross">
+                                    <a href="/Admin_home/destroy/<%= list.id %>">
+                                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div> 
+    
                     <% } %>
                 <% } %>
             <% } %>

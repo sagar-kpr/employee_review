@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="/css/userprofile.css">
+
+<main>
+    <aside>
+        <div id="image">
+            <img src="/images/blank.webp">
+        </div>
+        <div id="name">
+            <span><%= user.employe_name%></span>
+        </div>
+        <div id="status">
+            <div id="pending">
+                <span>Pending :</span>
+                <span>0</span>
+            </div>
+            <div id="review">
+                <span>Review :</span>
+                <span>0</span>
+            </div>
+        </div>
+    </aside>
+    <section>
+        <div id="total-user">
+            <h2>Assign user</h2>
+        </div>
+        <div id="employes-box">
+            <% let myemploye = admin.employes %>
+            <% for(list of employe ){ %>
+                <% for(emp of myemploye ){ %>
+                    <% if( list.id == emp && list.id != user.id){ %>
+                        <% if(user.assign.length > 0 ) { %>
+                            <% for(user of user.assign ){ %>
+                                <% if(user.id != list.id){ %>
+                                    <div class="employes">
+                                        <div id="employes-name">
+                                            <h3><%= list.employe_name %></h3>
+                                        </div>
+                                        <div id="assign-box">
+                                            <a href="/profile/assign/?name=<%= list.id%>">Assign</a>
+                                        </div>
+                                    </div>
+    
+                                <%} %>
+                            <% } %>    
+
+                        <% } else{ %>
+                            <div class="employes">
+                                <div id="employes-name">
+                                    <h3><%= list.employe_name %></h3>
+                                </div>
+                                <div id="assign-box">
+                                    <a href="/profile/assign/?name=<%= list.id%>">Assign</a>
+                                </div>
+                            </div>
+                        <% } %>
+                         
+                    <% } %>    
+                <% } %>
+            <% } %>
+           
+            
+        </div>      
+    </section>    
+    
+</main>
+
+
+<!-- 
+<div id="user-header">
+        <div id="user-name">
+            <h2><%= user.employe_name %></h2>
+        </div>
+        <div id="user-status">
+            <div id="pending-box">
+                <div id="pending">
+                    <p>Pendings</p>
+                </div>
+                <span>: 0</span>
+            </div>
+            <div id="review-box">
+                <div id="review">
+                    <p>Reviews</p>
+                </div>
+                <span>: 0</span>
+            </div>
+        </div>
+    </div>
+    <div id="asign-box">
+
+    </div>
+
+ -->

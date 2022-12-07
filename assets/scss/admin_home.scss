@@ -1,14 +1,13 @@
-::-webkit-scrollbar {
-    width: 10px;
-  }
+
 
 main{
     background-image: url('https://cdn.wallpapersafari.com/19/90/kGC79i.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
+    position: relative;
     justify-content: space-between;
     //border: 1px solid red;
     //0066cc blue, f56300 orange
@@ -49,7 +48,9 @@ main{
         height: 100%;
         display: flex;
         flex-direction: column;
-        
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
         align-items: center;
         //border: 1px solid red;
         #add-btn{
@@ -141,23 +142,30 @@ main{
                 border-radius: 5px;
                 margin: 20px;
                 display: flex;
+                //border: 1px solid red;
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: row;
                 font-family: Mulish,Roboto,Helvetica Neue,sans-serif;
-                #employe-name{
-                    width: auto;
-                    height: 50px;
-                    //border:1px solid red;
-                    text-align: center;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    margin-left: 10px;
-                    span{
-                        font-size: 1.5rem;
+                a{
+                    width: 100%;
+                    text-decoration: none;
+                    color: black;
+                    #employe-name{
+                        width: 100%;
+                        height: 50px;
+                        //border:1px solid red;
+                        text-align: center;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin-left: 10px;
+                        span{
+                            font-size: 1.5rem;
+                        }
                     }
                 }
+                
                 #cross{
                     width:50px;
                     height: 90%;

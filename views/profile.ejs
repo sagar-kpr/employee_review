@@ -24,44 +24,45 @@
             <h2>Assign user</h2>
         </div>
         <div id="employes-box">
-            <% let myemploye = admin.employes %>
-            <% for(list of employe ){ %>
-                <% for(emp of myemploye ){ %>
-                    <% if( list.id == emp && list.id != user.id){ %>
-                        <% if(user.assign.length != 0 ) { %>
-                            <% for(user of user.assign ){ %>
-                                <% if(user.id != list.id){ %>
-                                    <div class="employes">
-                                        <div id="employes-name">
-                                            <h3><%= list.employe_name %></h3>
-                                        </div>
-                                        <div id="assign-box">
-                                            <a href="/Admin_home/profile/assign/<%= list.id%>/<%=user.id%>">Assign</a>
-                                        </div>
+            <% if(user.assign.length == 0) {%>
+                <% for(list of employe){ %>
+                    <% if(user.id != list.id) { %>
+                        <% for(emp of admin.employes){ %>
+                            <% if(emp == list.id) { %>
+                                <div class="employes">
+                                    <div id="employes-name">
+                                        <h3><%= list.employe_name %></h3>
                                     </div>
-                                <%} %>
-                            <% } %>    
-
-                        <% } else{ %>
-                            <div class="employes">
-                                <div id="employes-name">
-                                    <h3><%= list.employe_name %></h3>
+                                    <div id="assign-box">
+                                        <a href="/Admin_home/profile/assign/<%= list.id%>/<%=user.id%>">Assign</a>
+                                    </div>
                                 </div>
-                                <div id="assign-box">
-                                    <a href="/Admin_home/profile/assign/<%= list.id%>/<%=user.id%>">Assign</a>
-                                </div>
-                            </div>
-                        <% } %>
-                         
-                    <% } %>    
+                            <% } %>
+                        <% } %> 
+                    <% } %>
                 <% } %>
+            <% } else { %>
+                <% let userassign = user.assign %>
+                
+
             <% } %>
+           
         </div>      
     </section>    
 </main>
 
 
 <!-- 
+
+    <div class="employes">
+        <div id="employes-name">
+            <h3>assign</h3>
+        </div>
+        <div id="assign-box">
+            <a href="/Admin_home/profile/assign/<%= list.id%>/<%=user.id%>">Assign</a>
+        </div>
+    </div>
+    
 <div id="user-header">
         <div id="user-name">
             <h2><%= user.employe_name %></h2>

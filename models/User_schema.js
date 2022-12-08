@@ -18,7 +18,8 @@ const User = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'AdminSchema'
     },
-    assign :[{
+   assign :[{
+        
         type: mongoose.Schema.Types.ObjectId
 
 

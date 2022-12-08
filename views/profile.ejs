@@ -28,7 +28,7 @@
             <% for(list of employe ){ %>
                 <% for(emp of myemploye ){ %>
                     <% if( list.id == emp && list.id != user.id){ %>
-                        <% if(user.assign.length > 0 ) { %>
+                        <% if(user.assign.length != 0 ) { %>
                             <% for(user of user.assign ){ %>
                                 <% if(user.id != list.id){ %>
                                     <div class="employes">
@@ -36,10 +36,9 @@
                                             <h3><%= list.employe_name %></h3>
                                         </div>
                                         <div id="assign-box">
-                                            <a href="/Admin_home/profile/assign/<%= list.id%>/<%= user.id %>">Assign</a>
+                                            <a href="/Admin_home/profile/assign/<%= list.id%>/<%=user.id%>">Assign</a>
                                         </div>
                                     </div>
-
                                 <%} %>
                             <% } %>    
 
@@ -49,7 +48,7 @@
                                     <h3><%= list.employe_name %></h3>
                                 </div>
                                 <div id="assign-box">
-                                    <a href="/Admin_home/profile/assign/?user=<%= user.id%>/<%= list.id%>">Assign</a>
+                                    <a href="/Admin_home/profile/assign/<%= list.id%>/<%=user.id%>">Assign</a>
                                 </div>
                             </div>
                         <% } %>

@@ -6,6 +6,7 @@ const Employe = require('../models/User_schema');
 
 module.exports.session = async function(req,res){
    let user = await Admin.findOne({admin_id: req.body.employe_id})
+   console.log('session controler')
    if(user){
         if(user.admin_password == req.body.employe_password){
             res.cookie('user', user.id)
@@ -29,6 +30,7 @@ module.exports.session = async function(req,res){
 }    
 
 module.exports.home = async function(req,res){
+    console.log('home controler')
     if(req.cookies.user){
         let user = await Admin.findById(req.cookies.user)
         if(user){
@@ -60,6 +62,7 @@ module.exports.destroy = function(req,res){
 }
 
 module.exports.employe = async function(req,res){
+    console.log('employe controler')
     let user = await Admin.findOne({admin_id: req.body.employe_id})
     if(user){
         return res.redirect('back')
@@ -91,6 +94,7 @@ module.exports.employe = async function(req,res){
 }    
 
 module.exports.profile = async function(req,res){
+    console.log('profile controler')
     let user = await Employe.findById(req.params.id)
     let admin = await Admin.findById(req.cookies.user);
     let employe = await Employe.find({})
@@ -103,6 +107,7 @@ module.exports.profile = async function(req,res){
 
 
 module.exports.remove = async function(req,res){
+    console.log('remove controler')
     let admin = await Admin.findById(req.cookies.user);
      
     admin.employes= admin.employes.filter(check)
@@ -122,6 +127,10 @@ module.exports.remove = async function(req,res){
 
 module.exports.assign = async function(req,res){
     let assignemploye = await Employe.findById(req.params.id);
-    
-    console.log(assignemploye)
+    let employe = await Employe.findById(req.params.id2);
+    employe.assign.push(assignemploye)
+    employe.save()
+    console.log(employe)
+    return res.redirect('back')
+
 }

@@ -121,7 +121,7 @@ module.exports.remove = async function(req,res){
 
 
 module.exports.assign = async function(req,res){
-    //let assignemploye = await Employe.findById(req.params.id);
+    let assignemploye = await Employe.findById(req.params.id);
     
-    console.log(req.query.id)
+    console.log(assignemploye)
 }

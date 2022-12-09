@@ -31,10 +31,11 @@ module.exports.session = async function(req,res){
 
 module.exports.home = async function(req,res){
     console.log('home controler')
+    let employe = await Employe.find({})
     if(req.cookies.user){
         let user = await Admin.findById(req.cookies.user)
         if(user){
-            let employe = await Employe.find({})
+            
             return res.render('Admin_home',{
                 admin: user,
                 employe : employe
@@ -44,8 +45,9 @@ module.exports.home = async function(req,res){
             if(user){
                 let admin = await Admin.find({})
                 return res.render('Employe_home', {
-                    employe: user,
-                    admin: admin
+                    user: user,
+                    admin: admin,
+                    employe : employe
                 })
             }    
         }
@@ -98,10 +100,12 @@ module.exports.profile = async function(req,res){
     let user = await Employe.findById(req.params.id)
     let admin = await Admin.findById(req.cookies.user);
     let employe = await Employe.find({})
+    let len  = user.assign.length;
     return res.render('profile', {
         user:user,
         admin: admin,
-        employe: employe
+        employe: employe,
+        len : len
     })
 }
 

@@ -11,7 +11,7 @@
         <div id="status">
             <div id="pending">
                 <span>Pending :</span>
-                <span>0</span>
+                <span><%= len %></span>
             </div>
             <div id="review">
                 <span>Review :</span>
@@ -43,8 +43,32 @@
                 <% } %>
             <% } else { %>
                 <% let userassign = user.assign %>
-                
+                <% for(list of employe){ %>
+                    <% if(user.id != list.id) { %>
+                        <% for(emp of admin.employes){ %>
+                            <% if(emp == list.id ) { %>
+                                <% let val = true %>
+                                <% for(myuser of userassign){ %>
+                                    <% if(myuser == list.id) { %>
+                                        <% val = false %>
+                                    <% } %>
+                                    
+                                <% } %>   
 
+                                <% if(val ) { %>
+                                    <div class="employes">
+                                        <div id="employes-name">
+                                            <h3><%= list.employe_name %></h3>
+                                        </div>
+                                        <div id="assign-box">
+                                            <a href="/Admin_home/profile/assign/<%= list.id%>/<%=user.id%>">Assign</a>
+                                        </div>
+                                    </div>
+                                <% } %>    
+                            <% } %>    
+                        <% } %>    
+                    <% } %>    
+                <% } %>    
             <% } %>
            
         </div>      
